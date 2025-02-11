@@ -1,0 +1,20 @@
+# app/swagger_config.yaml
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Delete Product API"
+  description: "API to delete products from the database"
+paths:
+  /products/{id}:
+    delete:
+      description: "Delete a product by ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Successfully deleted product"
+        404:
+          description: "Product not found"

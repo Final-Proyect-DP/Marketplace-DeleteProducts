@@ -13,3 +13,11 @@ def delete_product(id):
     db.session.delete(product)
     db.session.commit()
     return jsonify({"message": "Product deleted successfully"}), 200
+
+
+
+@product_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify(status='OK', service='user-read'), 200
+
+
